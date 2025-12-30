@@ -31,6 +31,7 @@ function MailboxList() {
 
     return (
         <div>
+            <h1>Mailbox List</h1>
             {(() => {
                 try {
                     if (Array.isArray(mails)) {

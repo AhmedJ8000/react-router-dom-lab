@@ -7,12 +7,12 @@ import { Spin } from 'antd';
 
 
 function MailboxDetails() {
-    const [mail, setMail] = useState()
+    const [mailboxes, setMail] = useState()
     const {id} = useParams()
 
     async function getMail(){
         try{
-        const foundMail = await axios.get(`${import.meta.env.VITE_API_URL}/${id}`)
+        const foundMail = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/${id}`)
         setMail(foundMail.data)
 
         }
@@ -33,9 +33,9 @@ function MailboxDetails() {
     <div>
         <h1>Mail Details</h1>
 
-        {mail ? (<>
-            <h2>Name: {mail.owner}</h2>
-            <p>Course: {mail.size}</p>
+        {mailboxes ? (<>
+            <h2>Name: {mailboxes.owner}</h2>
+            <p>Course: {mailboxes.size}</p>
         
         </>) :  <Spin />}
     </div>
