@@ -32,24 +32,18 @@ function MailboxList() {
     return (
         <div>
             <h1>Mailbox List</h1>
-            {(() => {
-                try {
-                    if (Array.isArray(mails)) {
-                        return mails.map(oneMail => (
-                            <div key={oneMail._id}>
-                                <p>Boxholder: {oneMail.owner}</p>
-                                <p>Box Size: {oneMail.size || "None"}</p>
-                                <Link to={`/mailboxes/${oneMail._id}`}>See Mail Details</Link>
-                            </div>
-                        ))
-                    } else {
-                        return <p>No mails available.</p>
-                    }
-                } catch (error) {
-                    console.error('Error rendering mails:', error)
-                    return <p>Error displaying mails.</p>
-                }
-            })()}
+
+            {Array.isArray(mails) && mails.length > 0 ? (
+                mails.map((oneMail, index) => (
+                    <div key={oneMail._id}>
+                        <Link to={`/mailboxes/${oneMail._id}`}>
+                            <br />Mailbox {index + 1}
+                        </Link>
+                    </div>
+                ))
+            ) : (
+                <p>No mailboxes available.</p>
+            )}
         </div>
     )
 }
