@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import { Route, Routes } from 'react-router'
 import MailboxDetails from './components/pages/MailboxDetails/MailboxDetails'
 import MailboxList from './components/pages/MailboxList/MailboxList'
+import MailboxForm from './components/pages/MailboxForm/MailboxForm'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/mailboxes/:id' element={<MailboxDetails/>}/>
         <Route path='/mailboxes' element={<MailboxList/>} />
+        <Route path='/new-mail' element={<MailboxForm/>} />
         <Route path='/' element={<Homepage/>} />
       </Routes>
       </main>

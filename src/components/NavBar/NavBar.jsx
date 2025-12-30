@@ -5,6 +5,7 @@ function NavBar() {
     <div>
         <Link to='/'>Homepage</Link>
         <Link to='/mailboxes'>Mailboxes</Link>
+        <Link to='/new-mail'>New Mail</Link>
     </div>
   )
 }
